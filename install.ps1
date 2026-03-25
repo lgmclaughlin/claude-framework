@@ -29,13 +29,11 @@ Write-Host "Installed to:"
 Write-Host "  $InstallBin\cframe.bat"
 Write-Host "  $InstallData\templates\"
 
-# Check if in PATH
-$currentPath = [Environment]::GetEnvironmentVariable("PATH", "User")
-if ($currentPath -notlike "*$InstallBin*") {
+# Check if cframe is findable after install
+if (-not (Get-Command cframe -ErrorAction SilentlyContinue)) {
     Write-Host ""
-    Write-Host "Warning: $InstallBin is not in your PATH"
-    Write-Host "To add it, run:"
-    Write-Host "  `$env:PATH += `";$InstallBin`""
+    Write-Host "Note: cframe is not in your PATH. Add it permanently:"
+    Write-Host "  [Environment]::SetEnvironmentVariable('PATH', `"$InstallBin;`$env:PATH`", 'User')"
     Write-Host ""
-    Write-Host "Or add permanently via System Properties > Environment Variables"
+    Write-Host "Or add via System Properties > Environment Variables"
 }
