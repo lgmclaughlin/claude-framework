@@ -36,21 +36,20 @@ Requires Python 3 installed and in PATH.
 
 ## Usage
 
-### Create a new project
+### Create a new project directory
 
 ```bash
 cframe init my-project
 cframe init my-project --design --systems
 ```
 
-### Add to existing directory
+### Add to existing project directory
 
 ```bash
-# From inside the directory
-cd existing-project
-cframe init .
+# From inside
+cframe init
 
-# From outside the directory
+# From outside
 cframe init existing-project
 ```
 

@@ -285,7 +285,7 @@ def main():
         "init", help="Create a new project from base template"
     )
     init_parser.add_argument(
-        "project_name", help="Name of the project directory to create"
+        "project_name", nargs="?", default=".", help="Name of the project directory to create (defaults to current directory)"
     )
     add_extension_flags(init_parser)
     init_parser.set_defaults(func=cmd_init)
