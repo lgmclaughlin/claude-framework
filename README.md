@@ -4,15 +4,35 @@ A CLI tool for scaffolding Claude-based projects with modular extensions.
 
 ## Installation
 
+### Linux / macOS
+
 ```bash
 ./install.sh
 ```
 
-Installs to `~/.local/bin/cframe`. Add to PATH if needed:
+Add to PATH if needed:
 
 ```bash
 export PATH="$HOME/.local/bin:$PATH"
 ```
+
+### Windows
+
+Double-click `install.bat` or run from command line:
+
+```cmd
+install.bat
+```
+
+Or directly in PowerShell:
+
+```powershell
+.\install.ps1
+```
+
+Requires Python 3 installed and in PATH.
+
+> **Note:** macOS and Windows support is untested. Please open an issue if you encounter problems.
 
 ## Usage
 

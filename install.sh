@@ -1,8 +1,17 @@
 #!/bin/bash
 set -e
 
-INSTALL_BIN="$HOME/.local/bin"
-INSTALL_DATA="$HOME/.local/share/cframe"
+# Detect platform and set paths
+case "$(uname -s)" in
+    Darwin)
+        INSTALL_BIN="$HOME/.local/bin"
+        INSTALL_DATA="$HOME/Library/Application Support/cframe"
+        ;;
+    *)
+        INSTALL_BIN="$HOME/.local/bin"
+        INSTALL_DATA="$HOME/.local/share/cframe"
+        ;;
+esac
 
 echo "Installing cframe..."
 
@@ -26,6 +35,6 @@ echo "  $INSTALL_DATA/templates/"
 if [[ ":$PATH:" != *":$INSTALL_BIN:"* ]]; then
     echo ""
     echo "Warning: $INSTALL_BIN is not in your PATH"
-    echo "Add this to your ~/.bashrc or ~/.zshrc:"
+    echo "Add this to your shell config:"
     echo "  export PATH=\"\$HOME/.local/bin:\$PATH\""
 fi

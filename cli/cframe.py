@@ -3,6 +3,7 @@
 
 import argparse
 import json
+import os
 import shutil
 import sys
 from pathlib import Path
@@ -14,10 +15,26 @@ def die(message: str) -> None:
     sys.exit(1)
 
 
+def get_data_dir() -> Path:
+    """Get platform-specific data directory for cframe."""
+    if sys.platform == "darwin":
+        # macOS
+        return Path.home() / "Library" / "Application Support" / "cframe"
+    elif sys.platform == "win32":
+        # Windows
+        appdata = os.environ.get("APPDATA")
+        if appdata:
+            return Path(appdata) / "cframe"
+        return Path.home() / "AppData" / "Roaming" / "cframe"
+    else:
+        # Linux and others
+        return Path.home() / ".local" / "share" / "cframe"
+
+
 def get_template_dir() -> Path:
     """Resolve path to templates/ directory."""
     # Check installed location first
-    installed_dir = Path.home() / ".local" / "share" / "cframe" / "templates"
+    installed_dir = get_data_dir() / "templates"
     if installed_dir.exists():
         return installed_dir
 
