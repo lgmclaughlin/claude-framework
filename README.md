@@ -50,7 +50,7 @@ cframe init my-project --design --systems
 cframe init
 
 # From outside
-cframe init existing-project
+cframe init path/to/existing-project
 ```
 
 ### Add extensions

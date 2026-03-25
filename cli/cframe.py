@@ -162,17 +162,13 @@ def cmd_init(args):
     """Create a new project with base template and optional extensions."""
     project_name = args.project_name
 
-    # Handle "." as current directory
+    # Resolve project path
     if project_name == ".":
         project_path = Path.cwd()
         is_current_dir = True
     else:
-        project_path = Path.cwd() / project_name
+        project_path = Path(project_name).resolve()
         is_current_dir = False
-
-        # Validate project name (only for new directories, not ".")
-        if "/" in project_name or "\\" in project_name or project_name.startswith("."):
-            die(f"Invalid project name '{project_name}'")
 
     if project_path.exists():
         # Check if already a cframe project
@@ -186,8 +182,14 @@ def cmd_init(args):
             die("Directory already contains Claude files (.claude/ or CLAUDE.md)\nRemove these files first or use a different directory.")
         is_existing_dir = True
     else:
+        # Validate new directory name
+        dir_name = project_path.name
+        invalid_chars = '<>:"|?*'
+        if any(c in dir_name for c in invalid_chars) or not dir_name:
+            die(f"Invalid directory name '{dir_name}'")
+
         # Create new project directory
-        project_path.mkdir()
+        project_path.mkdir(parents=True)
         is_existing_dir = False
 
     # Copy base template
