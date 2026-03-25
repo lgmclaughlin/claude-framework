@@ -1,0 +1,21 @@
+### Deployment Tracking
+
+The deploy extension provides a single source of truth for deployment processes and requirements.
+
+Files:
+
+- DEPLOY.md  
+  A running document that tracks all steps required to deploy the project, including:
+  - Environment setup
+  - Build steps
+  - Configuration requirements
+  - Deployment commands
+  - Post-deploy checks
+
+Guidelines:
+
+- Treat DEPLOY.md as a living checklist
+- Keep steps explicit and reproducible
+- Prefer step-by-step instructions over high-level summaries
+- Update the document whenever deployment processes change
+- Ensure someone unfamiliar with the project could follow it end-to-end

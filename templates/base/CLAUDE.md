@@ -2,7 +2,7 @@
 
 ## Summary
 
-This repository follows a structured, phase-based workflow designed for effective collaboration with AI systems like Claude.
+This repository follows a structured, phase-based workflow designed for effective collaboration.
 
 The goal is to:
 - Maintain a clear separation between planning, execution, and history
@@ -33,15 +33,15 @@ Claude should use this as the long-term source of truth, but not as the active w
 
 ```
 .claude/
+  archive/
+    prompts/         # Processed PROMPT.md entries
+    phases/          # Completed phases
+    progress/        # Archived progress logs
   OVERVIEW.md        # Full project overview and roadmap
   CURRENT_PHASE.md   # Active phase with granular tasks
   PROGRESS.md        # Periodic progress updates
   PROMPT.md          # Large prompt input (only read when referenced)
 
-archive/
-  prompts/           # Archived PROMPT.md entries
-  phases/            # Completed phases
-  progress/          # Archived progress logs
 ```
 
 ---

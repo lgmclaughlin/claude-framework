@@ -1,0 +1,80 @@
+# cframe
+
+A CLI tool for scaffolding Claude-based projects with modular extensions.
+
+## Installation
+
+```bash
+./install.sh
+```
+
+Installs to `~/.local/bin/cframe`. Add to PATH if needed:
+
+```bash
+export PATH="$HOME/.local/bin:$PATH"
+```
+
+## Usage
+
+### Create a new project
+
+```bash
+cframe init my-project
+cframe init my-project --design --systems
+```
+
+### Add to existing directory
+
+```bash
+# From inside the directory
+cd existing-project
+cframe init .
+
+# From outside the directory
+cframe init existing-project
+```
+
+### Add extensions
+
+```bash
+cframe add --deploy
+```
+
+### List available extensions
+
+```bash
+cframe list
+```
+
+### Show project status
+
+```bash
+cframe status
+```
+
+## Extensions
+
+| Extension | Description |
+|-----------|-------------|
+| `--design` | UI/UX design planning and documentation |
+| `--deploy` | Deployment steps and documentation |
+| `--systems` | System architecture and infrastructure |
+
+## Project Structure
+
+After `cframe init`, your project contains:
+
+```
+.claude/
+  extensions.json    # Installed extensions
+  OVERVIEW.md        # Project roadmap
+  CURRENT_PHASE.md   # Active work
+  PROGRESS.md        # Progress log
+  PROMPT.md          # Large prompt input
+  archive/           # Historical records
+CLAUDE.md            # Claude instructions
+```
+
+## License
+
+MIT

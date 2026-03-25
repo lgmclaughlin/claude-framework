@@ -1,0 +1,30 @@
+### Design Assets
+
+The design extension provides a structured space for UI/UX thinking, visual references, and aesthetic direction.
+
+Files and folders:
+
+- DESIGN.md  
+  A collaborative design document used to define and refine:
+  - UI/UX decisions
+  - Layout structures and flows
+  - Visual style and aesthetic direction
+  - Design tokens (colors, spacing, typography)
+  - Interaction patterns and behavior
+
+- reference/  
+  A folder for visual inputs such as:
+  - Screenshots
+  - Mockups
+  - Inspiration images
+  - UI references
+
+- reference/copy.sh  
+  A user invoked helper script for copying the latest screenshot into the reference folder for quick iteration.
+
+Guidelines:
+
+- Keep DESIGN.md structured and easy to scan
+- Prefer refining existing sections over adding redundant ones
+- Use reference/ assets to support decisions in DESIGN.md
+- Avoid embedding large images directly in markdown; reference them instead

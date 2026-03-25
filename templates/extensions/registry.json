@@ -1,0 +1,7 @@
+{
+  "extensions": {
+    "design": "UI / UX design planning and documentation",
+    "deploy": "Document steps to take for deployment",
+    "systems": "System architecture and infrastructure design"
+  }
+}

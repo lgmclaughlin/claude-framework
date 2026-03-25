@@ -1,0 +1,88 @@
+### Systems Design
+
+The systems extension provides a structured space for defining how the project works at a system level, including architecture, data flow, and supporting infrastructure.
+
+Files:
+
+- SYSTEMS.md  
+  A document used to describe the architecture and behavior of the system, including:
+  - Core components and responsibilities
+  - Data flow between services or modules
+  - External integrations and dependencies
+  - Required infrastructure and supporting services (e.g., cloud services, orchestration, storage)
+  - Key design decisions and tradeoffs
+  - Constraints and assumptions
+
+Structure:
+```
+# Systems Overview
+
+## Architecture
+
+## Data Flow
+
+## Integrations
+
+## Infrastructure and Services
+
+## Decisions
+
+## Constraints and Assumptions
+
+## Future Considerations
+```
+
+Section Guidelines:
+
+#### Architecture
+- Define the high-level system structure
+- Identify major components or services
+- Describe responsibilities of each component
+- Explain how components are organized or separated
+
+#### Data Flow
+- Describe how data moves through the system
+- Include request/response flows and asynchronous processes
+- Highlight key transformations or processing steps
+- Focus on interactions between components
+
+#### Integrations
+- List all external systems and dependencies
+- Include APIs, databases, and third-party services
+- Note authentication or identity providers if applicable
+- Clarify how each integration is used
+
+#### Infrastructure and Services
+- Define required platforms and environments
+- Include cloud providers (e.g., AWS, GCP)
+- Include orchestration systems (e.g., Kubernetes)
+- List supporting services (queues, caches, storage)
+- Note any relevant networking or security considerations
+
+#### Decisions
+- Document important architectural decisions
+- Include reasoning behind each decision
+- Mention alternatives that were considered when relevant
+- Focus on decisions that impact future development
+
+#### Constraints and Assumptions
+- Capture known technical or business constraints
+- Document assumptions made during design
+- Include limitations of tools, systems, or environments
+- Keep clear and explicit to avoid ambiguity
+
+#### Future Considerations
+- Identify potential improvements or optimizations
+- Highlight scaling concerns or risks
+- Note areas that may need refactoring
+- Keep forward-looking but grounded in current design
+
+Rules:
+- Start with a high-level overview before adding detail
+- Focus on how components interact and why they are designed that way
+- Document decisions and reasoning, not just final outcomes
+- Diagrams and external documentation
+  - If MCP servers are available for documentation tools (e.g., Confluence), prefer using them to create and manage diagrams over ASCII
+  - Ensure external documentation is accessible and kept in sync with the system description
+  - Store links to diagrams alongside relevant sections in SYSTEMS.md
+- Keep the document updated as the system evolves to avoid drift
