@@ -1,6 +1,8 @@
 # cframe
 
-A CLI tool for scaffolding Claude-based projects with modular extensions.
+A CLI tool for managing Claude-based projects.
+
+Structure your Claude Code projects with phase-based planning, progress tracking, and archival so long-running projects stay organized across sessions.
 
 ## Installation
 
@@ -70,6 +72,17 @@ cframe list
 ```bash
 cframe status
 ```
+
+## Suggested Workflow
+
+1. Run `cframe init` and update `.claude/OVERVIEW.md` with a project summary and deliverables
+2. Run Claude in plan mode and collaborate to define phases and high-level tasks in OVERVIEW
+3. Plan the first `CURRENT_PHASE` using OVERVIEW as reference; include details, edge cases, and granular tasks
+4. Optionally add extensions (`cframe add --deploy`) and populate their md files with specs
+5. Iterate until CURRENT_PHASE is complete
+6. Repeat for each phase until the project is finalized
+
+> **Tip:** Some extensions are self-updating. For example, `--deploy` updates automatically when Claude recognizes deployment-relevant steps.
 
 ## Extensions
 
